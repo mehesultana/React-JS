@@ -17,11 +17,22 @@ class Clock extends React.Component {
 		});
 	}
 
+	handleClick() {
+		console.log('the button clicked');
+	}
+
 	render() {
+		const { date } = this.state;
+
 		return (
-			<h1 className="heading">
-				<span className="text">{this.state.date.toLocaleTimeString(this.props.local)}</span>
-			</h1>
+			<div>
+				<h1 className="heading">
+					<span className="text">{date.toLocaleTimeString('bn-BD')}</span>
+				</h1>
+				<button type="button" onClick={this.handleClick}>
+					Click here
+				</button>
+			</div>
 		);
 	}
 }
